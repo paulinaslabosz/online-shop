@@ -1,0 +1,26 @@
+.nav {
+ width: 400px;
+   
+}
+
+.nav_list {
+    list-style-type: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    
+    padding: 0;
+    
+   
+}
+
+.nav_item {
+    padding: 15px;
+    letter-spacing: 3px;
+    border-left: 10px solid green;
+    transition: letter-spacing 0.5s ease;
+}
+
+.nav_item:hover {
+    letter-spacing: 10px;
+
+}
