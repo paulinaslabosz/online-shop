@@ -4,23 +4,27 @@
 }
 
 .nav_list {
-    list-style-type: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    
     padding: 0;
-    
-   
-}
+    display: flex;
+    flex-direction: column;
+   }
 
 .nav_item {
+    text-transform: uppercase;
+    color: black;
     padding: 15px;
+    font-weight: bold;
+    text-decoration: none;
     letter-spacing: 3px;
-    border-left: 10px solid green;
+    
     transition: letter-spacing 0.5s ease;
 }
 
 .nav_item:hover {
     letter-spacing: 10px;
 
+}
+
+.active {
+    border-left: 10px solid green;
 }
