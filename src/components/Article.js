@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/Article.css';
-const Article = (props) => {
+
+function Article(props) {
   return (
     <section>
       <h3 className='article_title'>{props.title}</h3>
@@ -8,6 +9,6 @@ const Article = (props) => {
       <p className='article_content'>{props.content}</p>
     </section>
   );
-};
+}
 
 export default Article;

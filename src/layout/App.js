@@ -9,7 +9,7 @@ import Admin from '../pages/Admin';
 import Footer from './Footer';
 import '../styles/App.css';
 
-const App = () => {
+function App() {
   return (
     <BrowserRouter>
       <div className='page'>
@@ -28,6 +28,6 @@ const App = () => {
       </div>
     </BrowserRouter>
   );
-};
+}
 
 export default App;
