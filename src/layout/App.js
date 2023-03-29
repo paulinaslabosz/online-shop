@@ -7,6 +7,7 @@ import Products from '../pages/Products';
 import Contact from '../pages/Contact';
 import Admin from '../pages/Admin';
 import Footer from './Footer';
+import Login from '../pages/Login';
 import '../styles/App.css';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
               <Route path='/products' Component={Products} />
               <Route path='/contact' Component={Contact} />
               <Route path='/admin' Component={Admin} />
+              <Route path='/login' Component={Login} />
             </Routes>
           </section>
         </main>

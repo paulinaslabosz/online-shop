@@ -24,6 +24,18 @@ function Header() {
           path='/products'
           element={<img className='image' src={img3} alt='Sitting man' />}
         ></Route>
+        <Route
+          path='/admin'
+          element={
+            <img className='image' src={img1} alt='Black and white girl' />
+          }
+        ></Route>
+        <Route
+          path='/login'
+          element={
+            <img className='image' src={img2} alt='Back of the girl s head' />
+          }
+        ></Route>
       </Routes>
     </>
   );
