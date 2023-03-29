@@ -18,6 +18,7 @@ function Blog() {
       .then((response) => response.json())
       .then((data) => setUsers({ content: data }));
   }, []);
+
   const articles = posts.content.map((article) => (
     <Article
       key={article.id}
@@ -29,10 +30,10 @@ function Blog() {
   ));
 
   return (
-    <main className='content'>
+    <div>
       <h2 className='blog_title'>Oto lista nowości!</h2>
       {articles.slice(1, 30)}
-    </main>
+    </div>
   );
 }
 

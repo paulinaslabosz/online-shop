@@ -22,7 +22,7 @@ function Products() {
       category={product.category}
     />
   ));
-  return <div className='products_wrapper'>{productsList}</div>;
+  return <div className='products'>{productsList}</div>;
 }
 
 export default Products;

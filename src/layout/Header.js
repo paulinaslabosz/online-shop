@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Header() {
-  return <header>Tu będzie obrazek</header>;
+  return <div>Tu będzie obrazek</div>;
 }
 
 export default Header;

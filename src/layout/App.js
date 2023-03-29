@@ -12,19 +12,26 @@ import '../styles/App.css';
 function App() {
   return (
     <BrowserRouter>
-      <div className='page'>
-        <Header />
-        <div className='wrapper'>
-          <Nav />
-          <Routes>
-            <Route path='/' Component={Blog} />
-            <Route path='/products' Component={Products} />
-            <Route path='/contact' Component={Contact} />
-            <Route path='/admin' Component={Admin} />
-          </Routes>
-        </div>
-
-        <Footer />
+      <div className='app'>
+        <header>
+          <Header />
+        </header>
+        <main>
+          <aside className='navigation'>
+            <Nav />
+          </aside>
+          <section className='page'>
+            <Routes>
+              <Route path='/' Component={Blog} />
+              <Route path='/products' Component={Products} />
+              <Route path='/contact' Component={Contact} />
+              <Route path='/admin' Component={Admin} />
+            </Routes>
+          </section>
+        </main>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </BrowserRouter>
   );

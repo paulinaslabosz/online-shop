@@ -5,11 +5,11 @@ function Article(props) {
   const author = props.users.find((user) => user.id === props.userId);
 
   return (
-    <section>
+    <div className='article'>
       <h3 className='article_title'>{props.title}</h3>
       <p className='article_author'>{author.name}</p>
       <p className='article_content'>{props.content}</p>
-    </section>
+    </div>
   );
 }
 
