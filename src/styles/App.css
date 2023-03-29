@@ -10,7 +10,9 @@
 }
 
 header {
-    flex-basis: 30vh;
+    flex-basis: 50vh;
+    position: relative;
+overflow: hidden;
 }
 
 main {
