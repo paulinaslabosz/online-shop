@@ -10,15 +10,19 @@ function Header() {
       <Routes>
         <Route
           path='/'
-          element={<img className='image' src={img1} alt='girl' />}
+          element={
+            <img className='image' src={img1} alt='Black and white girl' />
+          }
         ></Route>
         <Route
           path='/contact'
-          element={<img className='image' src={img2} alt='sth' />}
+          element={
+            <img className='image' src={img2} alt='Back of girl s head' />
+          }
         ></Route>
         <Route
           path='/products'
-          element={<img className='image' src={img3} alt='sthsth' />}
+          element={<img className='image' src={img3} alt='Sitting man' />}
         ></Route>
       </Routes>
     </>
