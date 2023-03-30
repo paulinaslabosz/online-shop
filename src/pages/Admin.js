@@ -21,5 +21,3 @@ function Admin() {
 }
 
 export default Admin;
-
-// permission ? <p>Jesteś na stronie admina</p> : redirect('/login')
