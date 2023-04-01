@@ -5,4 +5,13 @@ const products = atom({
   default: [],
 });
 
-export { products };
+const users = atom({
+  key: 'atoms',
+  default: [],
+});
+
+const posts = atom({
+  key: 'posts',
+  default: [],
+});
+export { products, users, posts };

@@ -1,8 +1,11 @@
 import React from 'react';
+import { useRecoilValue } from 'recoil';
+import { users } from '../recoil_state';
 import '../styles/Article.css';
 
 function Article(props) {
-  const author = props.users.find((user) => user.id === props.userId);
+  const usersList = useRecoilValue(users);
+  const author = usersList.find((el) => el.id === props.userId);
 
   return (
     <div className='article'>

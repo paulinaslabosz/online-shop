@@ -1,31 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useSetRecoilState, useRecoilValue } from 'recoil';
+import { users, posts } from '../recoil_state';
 import Article from '../components/Article';
 
 import '../styles/Blog.css';
 
 function Blog() {
-  const [posts, setPosts] = useState({ content: [] });
-  const [users, setUsers] = useState({ content: [] });
   const postsAPI = 'https://jsonplaceholder.typicode.com/posts';
   const usersAPI = 'https://jsonplaceholder.typicode.com/users';
 
-  useEffect(() => {
-    fetch(postsAPI)
-      .then((response) => response.json())
-      .then((data) => setPosts({ content: data }));
+  const usersList = useSetRecoilState(users);
+  const postsList = useSetRecoilState(posts);
 
+  const getUsers = () => {
     fetch(usersAPI)
       .then((response) => response.json())
-      .then((data) => setUsers({ content: data }));
-  }, []);
+      .then((data) => usersList(() => data));
+  };
 
-  const articles = posts.content.map((article) => (
+  const getPosts = () => {
+    fetch(postsAPI)
+      .then((response) => response.json())
+      .then((data) => postsList(() => data));
+  };
+  useEffect(() => {
+    getPosts();
+    getUsers();
+  });
+
+  const postsState = useRecoilValue(posts);
+
+  const articles = postsState.map((article) => (
     <Article
       key={article.id}
       userId={article.userId}
       title={article.title}
       content={article.body}
-      users={users.content}
     />
   ));
 
