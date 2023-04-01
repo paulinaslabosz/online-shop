@@ -10,6 +10,7 @@ import Contact from '../pages/Contact';
 import Admin from '../pages/Admin';
 import Footer from './Footer';
 import Login from '../pages/Login';
+import ErrorPage from '../pages/ErrorPage';
 import '../styles/App.css';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
                 <Route path='/contact' Component={Contact} />
                 <Route path='/admin' Component={Admin} />
                 <Route path='/login' Component={Login} />
+                <Route path='/*' Component={ErrorPage} />
               </Routes>
             </section>
           </main>
