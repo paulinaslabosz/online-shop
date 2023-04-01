@@ -21,7 +21,7 @@ function Header() {
           }
         ></Route>
         <Route
-          path='/products'
+          path='/productsList'
           element={<img className='image' src={img3} alt='Sitting man' />}
         ></Route>
         <Route
@@ -34,6 +34,12 @@ function Header() {
           path='/login'
           element={
             <img className='image' src={img2} alt='Back of the girl s head' />
+          }
+        ></Route>
+        <Route
+          path='/*'
+          element={
+            <img className='image' src={img1} alt='Black and white girl' />
           }
         ></Route>
       </Routes>
