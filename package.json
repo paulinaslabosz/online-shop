@@ -1,8 +1,8 @@
 {
   "name": "webpage-project",
   "version": "0.1.0",
-  "homepage": "http://github.com/paulinaslabosz/webpage-project",
-  "private": false,
+  "homepage": "http://github.com/paulinaslabosz/webpage-project/#",
+  "private": true,
     "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

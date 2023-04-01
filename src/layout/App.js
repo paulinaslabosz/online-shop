@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 import Header from './Header';
 import Nav from './Nav';
@@ -15,7 +15,7 @@ import '../styles/App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <RecoilRoot>
         <div className='app'>
           <header>
@@ -42,7 +42,7 @@ function App() {
           </footer>
         </div>
       </RecoilRoot>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
