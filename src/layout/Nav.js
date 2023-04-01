@@ -9,7 +9,7 @@ function Nav() {
         <NavLink to='/' className='nav_item'>
           Start
         </NavLink>
-        <NavLink to='/products' className='nav_item'>
+        <NavLink to='/productsList' className='nav_item'>
           Produkty
         </NavLink>
         <NavLink to='/contact' className='nav_item'>
