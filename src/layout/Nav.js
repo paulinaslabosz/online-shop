@@ -7,16 +7,16 @@ function Nav() {
     <nav className='nav'>
       <ul className='nav_list'>
         <NavLink to='/' className='nav_item'>
-          Start
+          Homepage
         </NavLink>
         <NavLink to='/productsList' className='nav_item'>
-          Produkty
+          Products
         </NavLink>
         <NavLink to='/contact' className='nav_item'>
-          Kontakt
+          Contact
         </NavLink>
         <NavLink to='/admin' className='nav_item'>
-          Panel Admina
+          Admin Panel
         </NavLink>
       </ul>
     </nav>

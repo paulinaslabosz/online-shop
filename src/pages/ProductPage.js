@@ -30,7 +30,7 @@ function ProductPage() {
           </p>
         </div>
       </div>
-      <Link to='/productsList'>Powrót do listy produktów</Link>
+      <Link to='/productsList'>Back to list</Link>
     </>
   );
 }

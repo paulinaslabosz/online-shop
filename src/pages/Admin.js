@@ -10,7 +10,7 @@ function Admin() {
         path='/'
         element={
           permission ? (
-            <p>Jesteś na stronie admina</p>
+            <p>You are on admin panel site.</p>
           ) : (
             <Navigate replace to='/login' />
           )

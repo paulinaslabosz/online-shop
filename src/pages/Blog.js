@@ -31,8 +31,8 @@ function Blog() {
 
   return (
     <div>
-      <h2 className='blog_title'>Oto lista nowości!</h2>
-      {articles.slice(1, 30)}
+      <h2 className='blog_title'>Check out our news!</h2>
+      {articles.slice(1, 10)}
     </div>
   );
 }

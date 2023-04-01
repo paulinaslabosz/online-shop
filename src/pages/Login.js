@@ -5,11 +5,11 @@ function Login() {
     <>
       <form>
         <label htmlFor='login'>
-          Podaj login:
+          Type your login:
           <input type='text' name='text' id='text' />
         </label>
         <label htmlFor='password'>
-          Podaj hasło:
+          Type your password:
           <input type='password' name='password' id='password' />
         </label>
       </form>

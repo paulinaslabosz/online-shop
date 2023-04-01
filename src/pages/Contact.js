@@ -18,7 +18,7 @@ function Contact() {
         active: !formData.active,
       });
     } else {
-      alert('Błąd: pusty formularz');
+      alert('Your form is empty!');
     }
   };
 
@@ -27,7 +27,7 @@ function Contact() {
       <form className='form' onSubmit={handleSubmit}>
         <label className='form_header' htmlFor='textarea'>
           {' '}
-          Skontaktuj się z nami:
+          Contact us:
         </label>
         <textarea
           className='form_textarea'
@@ -40,7 +40,7 @@ function Contact() {
             setFormData({ ...formData, content: e.target.value })
           }
         ></textarea>
-        <label htmlFor='mail'>Podaj swój adres e-mail:</label>
+        <label htmlFor='mail'>Type your e-mail address:</label>
         <input
           className='form_mail'
           placeholder='name@example.com'
@@ -52,7 +52,7 @@ function Contact() {
         />
         <input className='form_button' type='submit' value='Wyślij' />
         {formData.active ? (
-          <p className='form_comment'>Formularz został przesłany. Dziękujemy</p>
+          <p className='form_comment'>Form sent properly. Thank you!</p>
         ) : null}
       </form>
     </>
