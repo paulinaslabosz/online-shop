@@ -14,4 +14,19 @@ const posts = atom({
   key: 'posts',
   default: [],
 });
-export { products, users, posts };
+
+const adminPermission = atom({
+  key: 'adminPermission',
+  default: false,
+});
+
+const userName = atom({
+  key: 'userName',
+  default: '',
+});
+const userPassword = atom({
+  key: 'userPassword',
+  default: '',
+});
+
+export { products, users, posts, adminPermission, userName, userPassword };

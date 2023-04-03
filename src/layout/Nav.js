@@ -15,7 +15,7 @@ function Nav() {
         <NavLink to='/contact' className='nav_item'>
           Contact
         </NavLink>
-        <NavLink to='/admin' className='nav_item'>
+        <NavLink to='/adminPage' className='nav_item'>
           Admin Panel
         </NavLink>
       </ul>
