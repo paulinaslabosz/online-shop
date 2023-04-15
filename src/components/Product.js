@@ -8,7 +8,7 @@ function Product(props) {
         <img className='product_img' src={props.image} alt={props.name} />
       </div>
       <p className='product_price'>{props.price} $</p>
-      <Link to={`/products/${props.id}`} className='product_title'>
+      <Link to={`/productsList/${props.id}`} className='product_title'>
         {props.title}
       </Link>
     </div>

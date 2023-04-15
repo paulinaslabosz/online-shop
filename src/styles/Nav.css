@@ -16,7 +16,6 @@
     font-weight: bold;
     text-decoration: none;
     letter-spacing: 3px;
-    
     transition: letter-spacing 0.5s ease;
 }
 
@@ -28,3 +27,25 @@
 .active {
     border-left: 10px solid green;
 }
+
+.nav_category {
+    list-style: none;
+    padding: 0 40px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.nav_category_item {
+    font-weight: normal;
+  transition: font-weight .3s ease;
+  padding-bottom: 10px;
+  display: block;
+  text-decoration: none;
+  color: black;
+
+}
+
+
+.nav_category_item:hover {
+    font-weight: 800;
+      }

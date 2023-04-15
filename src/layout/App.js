@@ -8,8 +8,7 @@ import ProductsList from '../pages/ProductsList';
 import ProductPage from '../pages/ProductPage';
 import Contact from '../pages/Contact';
 import AdminPage from '../pages/AdminPage';
-import Login from '../pages/Login';
-import Admin from '../pages/Admin';
+import Category from '../pages/Category';
 import Footer from './Footer';
 import ErrorPage from '../pages/ErrorPage';
 import '../styles/App.css';
@@ -30,12 +29,10 @@ function App() {
               <Routes>
                 <Route path='/' Component={Blog} />
                 <Route path='/productsList' Component={ProductsList} />
-                <Route path='/products/:id' Component={ProductPage} />
+                <Route path='/productsList/:id' Component={ProductPage} />
+                <Route path='/category/:id' Component={Category} />
                 <Route path='/contact' Component={Contact} />
-                <Route path='/adminPage/*' Component={AdminPage}>
-                  <Route path='login' Component={Login} />
-                  <Route path='admin' Component={Admin} />
-                </Route>
+                <Route path='/adminPage/*' Component={AdminPage} />
                 <Route path='/*' Component={ErrorPage} />
               </Routes>
             </section>

@@ -6,7 +6,6 @@ import '../styles/Article.css';
 function Article(props) {
   const usersList = useRecoilValue(users);
   const author = usersList.find((el) => el.id === props.userId);
-
   return (
     <div className='article'>
       <h3 className='article_title'>{props.title}</h3>

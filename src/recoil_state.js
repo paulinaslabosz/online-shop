@@ -29,4 +29,17 @@ const userPassword = atom({
   default: '',
 });
 
-export { products, users, posts, adminPermission, userName, userPassword };
+const categories = atom({
+  key: 'categories',
+  default: [],
+});
+
+export {
+  categories,
+  products,
+  users,
+  posts,
+  adminPermission,
+  userName,
+  userPassword,
+};
