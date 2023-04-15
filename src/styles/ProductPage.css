@@ -5,7 +5,7 @@ margin-bottom: 50px;
 
 .productPage_wrapper {
 display: flex;
-margin-bottom: 20px;
+margin-bottom: 40px;
 
 }
 
@@ -32,4 +32,19 @@ font-size: 25px;
     padding-bottom: 5px;
 border-bottom: 1px solid black;
 font-size: 25px;
+}
+
+.back_to_list {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+     
+ 
+}
+
+.back_to_list:hover {
+    background-color: rgb(216, 217, 218);
 }

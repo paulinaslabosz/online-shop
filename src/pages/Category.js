@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { categories, products } from '../recoil_state';
 import Product from '../components/Product';
@@ -25,7 +26,14 @@ function Category() {
       category={product.category}
     />
   ));
-  return <div className='products'>{displayProducts}</div>;
+  return (
+    <div>
+      <Link className='back_to_list' to='/productsList'>
+        Back to list
+      </Link>
+      <div className='products'>{displayProducts}</div>;
+    </div>
+  );
 }
 
 export default Category;
