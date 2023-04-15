@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { useRecoilValue } from 'recoil';
-import { products } from '../recoil_state';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { products, categories } from '../recoil_state';
 import '../styles/Nav.css';
 
 function Nav() {
   const { pathname } = useLocation();
   const productsList = useRecoilValue(products);
-
+  const categoriesState = useSetRecoilState(categories);
   const allCategories = productsList.map((product) => ({
     category: product.category,
   }));
@@ -19,6 +19,8 @@ function Nav() {
   uniqueCategories.forEach((category, index) => {
     category.id = index + 1;
   });
+
+  categoriesState(uniqueCategories);
 
   const categoriesList = uniqueCategories.map((category) => (
     <NavLink
