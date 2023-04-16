@@ -6,7 +6,7 @@ import Product from '../components/Product';
 import '../styles/ProductsList.css';
 
 function ProductsList() {
-  const productAPI = 'https://fakestoreapi.com/products';
+  const productAPI = 'https://dummyjson.com/products?limit=100';
 
   const productsState = useSetRecoilState(products);
   const productsListRecoil = useRecoilValue(products);
@@ -14,8 +14,8 @@ function ProductsList() {
   useEffect(() => {
     fetch(productAPI)
       .then((res) => res.json())
-      .then((data) => productsState(() => data));
-  });
+      .then((data) => productsState(() => data.products));
+  }, [productsState]);
 
   const productsList = productsListRecoil.map((product) => (
     <Product
@@ -23,7 +23,7 @@ function ProductsList() {
       id={product.id}
       title={product.title}
       price={product.price}
-      image={product.image}
+      image={product.images[0]}
       description={product.description}
       category={product.category}
     />

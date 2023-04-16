@@ -21,7 +21,7 @@ function Category() {
       id={product.id}
       title={product.title}
       price={product.price}
-      image={product.image}
+      image={product.images[0]}
       description={product.description}
       category={product.category}
     />

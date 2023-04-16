@@ -2,7 +2,7 @@
 
 This project was bootstrapped with Create React App, React Router and Recoil.
 It is sample website with articles, products list page, contact and admin page which is under construction.
-I used in this projects APIs from `https://fakestoreapi.com/` and `https://jsonplaceholder.typicode.com/`
+I used in this projects APIs from `https://dummyjson.com/` and `https://jsonplaceholder.typicode.com/`
 
 ## Available Scripts
 

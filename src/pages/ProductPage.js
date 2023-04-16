@@ -14,11 +14,11 @@ function ProductPage() {
     <>
       <h3 className='productPage_title'>{product.title}</h3>
       <div className='productPage_wrapper'>
-        <img
+        {/* <img
           className='productPage_img'
           src={product.image}
           alt={product.title}
-        />
+        /> */}
         <div className='productPage_content'>
           <h5 className='productPage_category'>Category: {product.category}</h5>
           <p className='productPage_description'>
