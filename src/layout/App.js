@@ -22,12 +22,12 @@ function App() {
             <Header />
           </header>
           <main>
-            <aside className='navigation'>
+            <section className='navigation'>
               <Nav />
-            </aside>
+            </section>
             <section className='page'>
               <Routes>
-                <Route path='/' Component={Blog} />
+                <Route path='/blog' Component={Blog} />
                 <Route path='/productsList' Component={ProductsList} />
                 <Route path='/productsList/:id' Component={ProductPage} />
                 <Route path='/category/:id' Component={Category} />

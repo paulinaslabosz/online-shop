@@ -1,9 +1,8 @@
-.image {
-position: absolute;
-top: 70%;
-left: 50%;
-transform: translate(-50%, -50%);
-min-width: 100%;
-min-height: 100%;
-
+.header_title {
+text-decoration: none;
+text-transform: uppercase;
+letter-spacing: 10px;
+font-size: 40px;
+font-weight: bold;
+color: rgb(27, 27, 27);
 }

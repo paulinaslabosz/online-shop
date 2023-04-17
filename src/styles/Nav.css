@@ -1,31 +1,34 @@
-.nav {
- width: 400px;
+.nav_list {
+  display: flex;
+ justify-content: space-evenly;
+
+
    
 }
 
-.nav_list {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-   }
+.nav{
+    width: 100%;
+    background-color: rgb(32, 32, 32);
+}
 
 .nav_item {
     text-transform: uppercase;
-    color: black;
-    padding: 15px;
-    font-weight: bold;
+    color: rgb(235, 237, 238);
+    padding: 20px;
     text-decoration: none;
+    font-weight: 600;
     letter-spacing: 3px;
-    transition: letter-spacing 0.5s ease;
+    transition: background-color 0.5s ease;
+    
 }
 
 .nav_item:hover {
-    letter-spacing: 10px;
+    background-color: rgb(66, 66, 66);
 
 }
 
 .active {
-    border-left: 10px solid green;
+    background-color: rgb(66, 66, 66);
 }
 
 .nav_category {

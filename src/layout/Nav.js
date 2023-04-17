@@ -35,15 +35,15 @@ function Nav() {
   return (
     <nav className='nav'>
       <ul className='nav_list'>
-        <NavLink to='/' className='nav_item'>
-          Homepage
-        </NavLink>
         <NavLink to='/productsList' className='nav_item'>
           Products
         </NavLink>
-        {pathname === '/productsList' ? (
+        {/* {pathname === '/productsList' ? (
           <ul className='nav_category'>{categoriesList}</ul>
-        ) : null}
+        ) : null} */}
+        <NavLink to='/blog' className='nav_item'>
+          Blog
+        </NavLink>
 
         <NavLink to='/contact' className='nav_item'>
           Contact
