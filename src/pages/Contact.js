@@ -51,7 +51,7 @@ function Contact() {
           value={formData.mail}
           onChange={(e) => setFormData({ ...formData, mail: e.target.value })}
         />
-        <input className='form_button' type='submit' value='Wyślij' />
+        <input className='form_button' type='submit' value='Send' />
         {formData.active ? (
           <p className='form_comment'>Form sent properly. Thank you!</p>
         ) : null}

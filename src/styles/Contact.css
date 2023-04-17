@@ -28,11 +28,16 @@ font-size: 22px;
 }
 .form_button {
 display: block;
-font-size: 24px;
-font-weight: bold;
+font-size: 26px;
+margin-top: 15px;
+color: black;
+text-transform: uppercase;
+border: 1px solid black;
 padding: 10px;
-border-radius: 10px;
-border: 1px solid rgb(87, 85, 85);
-margin-top: 15px
+border-radius: 5px;
+background-color: white;
+}
 
+.form_button:hover {
+    background-color: rgb(216, 217, 218);
 }
