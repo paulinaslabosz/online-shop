@@ -14,13 +14,18 @@ function ProductPage() {
     <>
       <h3 className='productPage_title'>{product.title}</h3>
       <div className='productPage_wrapper'>
-        {/* <img
+        <img
           className='productPage_img'
-          src={product.image}
+          src={product.images[0]}
           alt={product.title}
-        /> */}
+        />
         <div className='productPage_content'>
-          <h5 className='productPage_category'>Category: {product.category}</h5>
+          <h5 className='productPage_category'>
+            Category:{' '}
+            <span className='productPage_category--bold'>
+              {product.category}
+            </span>
+          </h5>
           <p className='productPage_description'>
             {' '}
             <strong>Description:</strong> {product.description}
