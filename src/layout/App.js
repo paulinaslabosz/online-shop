@@ -11,6 +11,7 @@ import AdminPage from '../pages/AdminPage';
 import Category from '../pages/Category';
 import Footer from './Footer';
 import ErrorPage from '../pages/ErrorPage';
+import Homepage from '../pages/Homepage';
 import '../styles/App.css';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             </section>
             <section className='page'>
               <Routes>
+                <Route path='/' Component={Homepage} />
                 <Route path='/blog' Component={Blog} />
                 <Route path='/productsList' Component={ProductsList} />
                 <Route path='/productsList/:id' Component={ProductPage} />
