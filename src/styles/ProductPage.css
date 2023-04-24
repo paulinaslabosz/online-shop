@@ -6,6 +6,10 @@ padding-bottom: 8px;
 text-align: center;
 }
 
+.pp_image_wrapper {
+    width: 700px;
+}
+
 .productPage_wrapper {
 display: flex;
 margin-bottom: 40px;

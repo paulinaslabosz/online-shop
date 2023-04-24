@@ -14,11 +14,8 @@ function ProductPage() {
     <>
       <h3 className='productPage_title'>{product.title}</h3>
       <div className='productPage_wrapper'>
-        <img
-          className='productPage_img'
-          src={product.images[0]}
-          alt={product.title}
-        />
+        <img src={product.images[0]} alt='Product' />
+
         <div className='productPage_content'>
           <h5 className='productPage_category'>
             Category:{' '}

@@ -3,7 +3,6 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 import Header from './Header';
 import Nav from './Nav';
-import Blog from '../pages/Blog';
 import ProductsList from '../pages/ProductsList';
 import ProductPage from '../pages/ProductPage';
 import Contact from '../pages/Contact';
@@ -13,6 +12,7 @@ import Footer from './Footer';
 import ErrorPage from '../pages/ErrorPage';
 import Homepage from '../pages/Homepage';
 import '../styles/App.css';
+import Blog from '../pages/Blog';
 
 function App() {
   return (
