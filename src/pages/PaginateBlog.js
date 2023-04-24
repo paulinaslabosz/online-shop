@@ -1,31 +1,40 @@
 import React, { useEffect, useState } from 'react';
+import { useSetRecoilState, useRecoilValue } from 'recoil';
 import ReactPaginate from 'react-paginate';
 import Article from '../components/Article';
+import { posts, users } from '../recoil_state';
 import '../styles/PaginateBlog.css';
 
 function PaginateBlog() {
   const postsAPI = 'https://jsonplaceholder.typicode.com/posts';
-  //   const usersAPI = 'https://jsonplaceholder.typicode.com/users';
+  const usersAPI = 'https://jsonplaceholder.typicode.com/users';
 
-  const [articles, setArticles] = useState([]);
+  const setPosts = useSetRecoilState(posts);
+  const postsList = useRecoilValue(posts);
+
+  const setUsers = useSetRecoilState(users);
+
   const [itemOffset, setItemOffset] = useState(0);
 
   useEffect(() => {
-    // fetch(usersAPI)
-    //   .then((response) => response.json())
-    //   .then((data) => setUsers(() => data));
     fetch(postsAPI)
       .then((response) => response.json())
-      .then((data) => setArticles(() => data));
+      .then((data) => setPosts(() => data));
+  });
+
+  useEffect(() => {
+    fetch(usersAPI)
+      .then((response) => response.json())
+      .then((data) => setUsers(() => data));
   });
 
   const itemsPerPage = 10;
   const endOffset = itemOffset + itemsPerPage;
-  const currentArticles = articles.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(articles.length / itemsPerPage);
+  const currentArticles = postsList.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(postsList.length / itemsPerPage);
 
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % articles.length;
+    const newOffset = (event.selected * itemsPerPage) % postsList.length;
     setItemOffset(newOffset);
   };
 

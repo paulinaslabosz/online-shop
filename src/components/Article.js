@@ -9,7 +9,9 @@ function Article(props) {
   return (
     <div className='article'>
       <h3 className='article_title'>{props.title}</h3>
-      <p className='article_author'>{author?.name}</p>
+      <p className='article_author'>
+        <em>{author?.name}</em>
+      </p>
       <p className='article_content'>{props.content}</p>
     </div>
   );
