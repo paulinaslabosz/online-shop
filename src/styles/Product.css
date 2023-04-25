@@ -5,6 +5,7 @@
     align-items: center;
     margin: auto;
     background-color: white;
+    margin-bottom: 15px;
    
 } 
 
@@ -21,17 +22,35 @@
     text-decoration: none;
     color: black;
     font-weight: bold;
-   text-align: right;
+  
 }
 
 .product_price {
-    margin: 5px 0;
+    margin: 10px 0;
     font-size: 22px;
-    text-align: right;
 }
 
 .product {
   max-width: 300px;
   max-height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   
+}
+
+.product_addToCart {
+    background-color: black;
+    color: white;
+    font-size: 22px;
+    padding: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color .15s ease;
+    width: 100%;
+}
+
+.product_addToCart:hover {
+    background-color: rgb(90, 89, 89);
 }
