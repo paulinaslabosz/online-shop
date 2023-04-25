@@ -54,8 +54,8 @@ function PaginateBlog() {
         breakLabel='...'
         nextLabel='next ⇨'
         onPageChange={handlePageClick}
-        pageRangeDisplayed={2}
-        marginPagesDisplayed={2}
+        pageRangeDisplayed={1}
+        marginPagesDisplayed={1}
         pageCount={pageCount}
         previousLabel='⇦ previous'
         renderOnZeroPageCount={null}

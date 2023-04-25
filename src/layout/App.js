@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
+
 import Header from './Header';
 import Nav from './Nav';
 import ProductsList from '../pages/ProductsList';

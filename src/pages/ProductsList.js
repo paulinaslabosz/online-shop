@@ -7,16 +7,20 @@ import ReactPaginate from 'react-paginate';
 import '../styles/ProductsList.css';
 
 function ProductsList() {
-  const productAPI = 'https://dummyjson.com/products?limit=100';
-
-  const productsState = useSetRecoilState(products);
+  //recoil
   const productsListRecoil = useRecoilValue(products);
+  const setProducts = useSetRecoilState(products);
 
+  // getting data from API
+
+  const productAPI = 'https://dummyjson.com/products?limit=100';
   useEffect(() => {
     fetch(productAPI)
       .then((res) => res.json())
-      .then((data) => productsState(() => data.products));
-  }, [productsState]);
+      .then((data) => setProducts(() => data.products));
+  }, [setProducts]);
+
+  // pagination
 
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 20;
