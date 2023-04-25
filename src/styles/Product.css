@@ -40,7 +40,7 @@
   
 }
 
-.product_addToCart {
+.add_To_Cart {
     background-color: black;
     color: white;
     font-size: 22px;
@@ -51,6 +51,6 @@
     width: 100%;
 }
 
-.product_addToCart:hover {
+.add_To_Cart:hover {
     background-color: rgb(90, 89, 89);
 }

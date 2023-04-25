@@ -16,7 +16,7 @@ function Product(props) {
       </Link>
       <p className='product_price'>{props.price} $</p>
 
-      <button onClick={addToCart} className='product_addToCart'>
+      <button onClick={addToCart} className='add_To_Cart'>
         Add to cart
       </button>
     </div>
