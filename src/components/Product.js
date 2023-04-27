@@ -1,9 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { products, cart } from '../recoil_state';
 import '../styles/Product.css';
 function Product(props) {
-  const addToCart = () => {
-    console.log('Klik');
+  const productsList = useRecoilValue(products);
+  const setCart = useSetRecoilState(cart);
+  const cartState = useRecoilValue(cart);
+
+  const addToCart = (id) => {
+    const productsForCart = productsList.map((product) => ({
+      id: product.id,
+      title: product.title,
+      quantity: 1,
+      price: product.price,
+      img: product.images[0],
+    }));
+
+    const product = productsForCart.find((product) => product.id === id);
+
+    if (cartState.find((item) => item.id === product.id)) {
+      const test = cartState.map((item) => {
+        if (item.id === product.id) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      });
+      setCart(() => test);
+    } else {
+      setCart((oldCart) => [...oldCart, product]);
+    }
   };
 
   return (
@@ -16,7 +42,7 @@ function Product(props) {
       </Link>
       <p className='product_price'>{props.price} $</p>
 
-      <button onClick={addToCart} className='add_To_Cart'>
+      <button onClick={() => addToCart(props.id)} className='add_To_Cart'>
         Add to cart
       </button>
     </div>

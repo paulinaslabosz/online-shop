@@ -6,7 +6,7 @@ const products = atom({
 });
 
 const users = atom({
-  key: 'atoms',
+  key: 'users',
   default: [],
 });
 
@@ -34,7 +34,19 @@ const categories = atom({
   default: [],
 });
 
+const cart = atom({
+  key: 'cart',
+  default: [],
+});
+
+const activeCart = atom({
+  key: 'activeCart',
+  default: false,
+});
+
 export {
+  activeCart,
+  cart,
   categories,
   products,
   users,

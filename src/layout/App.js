@@ -13,6 +13,7 @@ import Category from '../pages/Category';
 import Footer from './Footer';
 import ErrorPage from '../pages/ErrorPage';
 import Homepage from '../pages/Homepage';
+import Cart from '../pages/Cart';
 import '../styles/App.css';
 import Blog from '../pages/Blog';
 
@@ -24,6 +25,7 @@ function App() {
           <header>
             <Header />
           </header>
+          <Cart />
           <main>
             <section className='navigation'>
               <Nav />
