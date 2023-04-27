@@ -1,18 +1,25 @@
 import React from 'react';
 import ProductCart from '../components/ProductCart';
-import { activeCart, cart } from '../recoil_state';
+import { activeCart, cart, discount, total } from '../recoil_state';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import '../styles/Cart.css';
 
 function Cart() {
   const isActive = useRecoilValue(activeCart);
+  const cartState = useRecoilValue(cart);
+  const discountState = useRecoilValue(discount);
+  const totalState = useRecoilValue(total);
+  const setTotal = useSetRecoilState(total);
   const setActiveCart = useSetRecoilState(activeCart);
-  const cartProd = useRecoilValue(cart);
   const onClick = () => {
     setActiveCart((oldIsActive) => !oldIsActive);
   };
 
-  const cartList = cartProd.map((product) => (
+  const totalArr = cartState.map((product) => product.price * product.quantity);
+
+  const finishPrice = totalArr.reduce((a, b) => a + b, 0);
+  console.log(finishPrice);
+  const cartList = cartState.map((product) => (
     <ProductCart
       key={product.id + 'a'}
       id={product.id}
@@ -32,8 +39,8 @@ function Cart() {
           <h2 className='cart_title'>Shopping cart</h2>
           <ul className='cart_list'>{cartList}</ul>
           <div className='cart_total'>
-            <p>Discount: </p>
-            <p>Total: </p>
+            <p>Discount: {discountState * 100}%</p>
+            <p>Total: $ {finishPrice - finishPrice * discountState}</p>
             <button className='cart_checkout'>Checkout</button>
           </div>
         </div>
