@@ -40,7 +40,15 @@ function Cart() {
           <ul className='cart_list'>{cartList}</ul>
           <div className='cart_total'>
             <p>Discount: {discountState * 100}%</p>
-            <p>Total: $ {finishPrice - finishPrice * discountState}</p>
+            <p>
+              Total:{' '}
+              {finishPrice !== 0
+                ? `$ ${finishPrice - finishPrice * discountState}`
+                : null}{' '}
+              <span className='cart_beforeDiscount'>
+                {finishPrice !== 0 ? `$ ${finishPrice}` : null}
+              </span>
+            </p>
             <button className='cart_checkout'>Checkout</button>
           </div>
         </div>

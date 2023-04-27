@@ -49,3 +49,9 @@ letter-spacing: 3px;
 border: none;
 margin-top: 20px;
 }
+
+.cart_beforeDiscount {
+    text-decoration: line-through;
+    color: rgb(211, 209, 208);
+   margin-left: 20px;
+}
