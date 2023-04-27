@@ -20,13 +20,13 @@ function Product(props) {
     const product = productsForCart.find((product) => product.id === id);
 
     if (cartState.find((item) => item.id === product.id)) {
-      const test = cartState.map((item) => {
+      const updatedCart = cartState.map((item) => {
         if (item.id === product.id) {
           return { ...item, quantity: item.quantity + 1 };
         }
         return item;
       });
-      setCart(() => test);
+      setCart(() => updatedCart);
     } else {
       setCart((oldCart) => [...oldCart, product]);
     }

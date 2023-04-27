@@ -2,12 +2,34 @@ import React from 'react';
 import { useSetRecoilState, useRecoilValue } from 'recoil';
 import { cart } from '../recoil_state';
 import '../styles/ProductCart.css';
+
 const ProductCart = (props) => {
   const setCart = useSetRecoilState(cart);
   const cartState = useRecoilValue(cart);
+
   const deleteProduct = (id) => {
     const cartAfterDelete = cartState.filter((product) => product.id !== id);
     setCart(() => cartAfterDelete);
+  };
+
+  const handleQuantity = (id, type, quantity) => {
+    if (type === 'increase') {
+      const updatedCart = cartState.map((item) => {
+        if (item.id === id) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      });
+      setCart(() => updatedCart);
+    } else if (type === 'decrease' && quantity > 1) {
+      const updatedCart = cartState.map((item) => {
+        if (item.id === id) {
+          return { ...item, quantity: item.quantity - 1 };
+        }
+        return item;
+      });
+      setCart(() => updatedCart);
+    }
   };
 
   return (
@@ -33,8 +55,18 @@ const ProductCart = (props) => {
         </button>
         <p>$ {props.price}</p>
         <div>
-          <button className='cart-btn'>-</button>
-          <button className='cart-btn'>+</button>
+          <button
+            onClick={() => handleQuantity(props.id, 'decrease', props.quantity)}
+            className={props.quantity === 1 ? 'cart-btn disabled' : 'cart-btn'}
+          >
+            -
+          </button>
+          <button
+            onClick={() => handleQuantity(props.id, 'increase', props.quantity)}
+            className='cart-btn'
+          >
+            +
+          </button>
         </div>
       </div>
     </li>

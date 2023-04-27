@@ -48,3 +48,7 @@ border: none;
 background-color: rgb(92, 91, 91);
 font-size: 22px;
 }
+
+.disabled {
+    background-color: rgb(168, 166, 166);
+}
