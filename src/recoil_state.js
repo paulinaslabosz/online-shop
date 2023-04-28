@@ -49,13 +49,8 @@ const discount = atom({
   default: 0.25,
 });
 
-const total = atom({
-  key: 'total',
-  default: [],
-});
 export {
   discount,
-  total,
   activeCart,
   cart,
   categories,

@@ -50,6 +50,12 @@ border: none;
 margin-top: 20px;
 }
 
+.cart_checkout:hover {
+    background-color: rgb(214, 212, 212);
+    color: black;
+    font-weight: bold;
+}
+
 .cart_beforeDiscount {
     text-decoration: line-through;
     color: rgb(211, 209, 208);

@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCart from '../components/ProductCart';
-import { activeCart, cart, discount, total } from '../recoil_state';
+import { activeCart, cart, discount } from '../recoil_state';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import '../styles/Cart.css';
 
@@ -8,17 +8,25 @@ function Cart() {
   const isActive = useRecoilValue(activeCart);
   const cartState = useRecoilValue(cart);
   const discountState = useRecoilValue(discount);
-  const totalState = useRecoilValue(total);
-  const setTotal = useSetRecoilState(total);
   const setActiveCart = useSetRecoilState(activeCart);
+
   const onClick = () => {
     setActiveCart((oldIsActive) => !oldIsActive);
   };
 
-  const totalArr = cartState.map((product) => product.price * product.quantity);
+  // order value / total
 
-  const finishPrice = totalArr.reduce((a, b) => a + b, 0);
-  console.log(finishPrice);
+  const CartProductsValue = cartState.map(
+    (product) => product.price * product.quantity
+  );
+
+  const orderValue = CartProductsValue.reduce((a, b) => a + b, 0);
+
+  const total = orderValue - orderValue * discountState;
+  const handleCheckout = () => {
+    alert(`Checkout - Total: $ ${total}`);
+  };
+
   const cartList = cartState.map((product) => (
     <ProductCart
       key={product.id + 'a'}
@@ -41,15 +49,14 @@ function Cart() {
           <div className='cart_total'>
             <p>Discount: {discountState * 100}%</p>
             <p>
-              Total:{' '}
-              {finishPrice !== 0
-                ? `$ ${finishPrice - finishPrice * discountState}`
-                : null}{' '}
+              Total: {total !== 0 ? `$ ${total}` : null}{' '}
               <span className='cart_beforeDiscount'>
-                {finishPrice !== 0 ? `$ ${finishPrice}` : null}
+                {orderValue !== 0 ? `$ ${orderValue}` : null}
               </span>
             </p>
-            <button className='cart_checkout'>Checkout</button>
+            <button onClick={handleCheckout} className='cart_checkout'>
+              Checkout
+            </button>
           </div>
         </div>
       ) : null}
