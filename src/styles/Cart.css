@@ -5,7 +5,6 @@
     position: absolute;
     right: -20vw;
     transition: right .5s;
-
 }
 
 .cart_wrapper--active {
@@ -46,7 +45,10 @@ padding: 30px 12px;
 list-style: none;
 width: 100%;
 padding: 20px;
+overflow-y: auto;
+flex-grow: 1;
 }
+
 
 
 .cart_total {
