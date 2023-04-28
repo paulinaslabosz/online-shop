@@ -56,8 +56,24 @@ function Cart() {
       </button>
 
       <div className='cart'>
-        <h2 className='cart_title'>Shopping cart</h2>
-        <ul className='cart_list'>{cartList}</ul>
+        <h2 className='cart_title'>
+          <div className='cart_title--icon'>
+            <img
+              className='cart_title--img'
+              src={icon}
+              alt='shoping cart icon'
+            />
+            <span className='cart_title--amount'>{amountOfProducts}</span>
+          </div>
+          Shopping cart
+        </h2>
+        <ul className='cart_list'>
+          {cartList.length > 0 ? (
+            cartList
+          ) : (
+            <span className='cart_info'>Add product to the cart</span>
+          )}
+        </ul>
         <div className='cart_total'>
           <p>Discount: {discountState * 100}%</p>
           <p>
