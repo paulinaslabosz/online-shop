@@ -4,8 +4,7 @@
     justify-content: space-between;
     border-top: 1px solid black;
     padding: 20px 0;
-    width: 100%;
-    
+    width: 100%;   
 }
 
 .cart_img {
@@ -51,4 +50,8 @@ font-size: 22px;
 
 .disabled {
     background-color: rgb(168, 166, 166);
+}
+
+.cart_quantityBtns {
+    width: 60px;
 }

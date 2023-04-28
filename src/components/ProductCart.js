@@ -54,7 +54,7 @@ const ProductCart = (props) => {
           x
         </button>
         <p>$ {props.price}</p>
-        <div>
+        <div className='cart_quantityBtns'>
           <button
             onClick={() => handleQuantity(props.id, 'decrease', props.quantity)}
             className={props.quantity === 1 ? 'cart-btn disabled' : 'cart-btn'}

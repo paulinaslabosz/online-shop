@@ -38,29 +38,28 @@ function Cart() {
     />
   ));
   return (
-    <>
+    <div className={isActive ? 'cart_wrapper--active' : 'cart_wrapper'}>
       <button className='cart_icon' onClick={onClick}>
         {isActive ? 'X' : 'C'}
       </button>
-      {isActive ? (
-        <div className='cart'>
-          <h2 className='cart_title'>Shopping cart</h2>
-          <ul className='cart_list'>{cartList}</ul>
-          <div className='cart_total'>
-            <p>Discount: {discountState * 100}%</p>
-            <p>
-              Total: {total !== 0 ? `$ ${total}` : null}{' '}
-              <span className='cart_beforeDiscount'>
-                {orderValue !== 0 ? `$ ${orderValue}` : null}
-              </span>
-            </p>
-            <button onClick={handleCheckout} className='cart_checkout'>
-              Checkout
-            </button>
-          </div>
+
+      <div className='cart'>
+        <h2 className='cart_title'>Shopping cart</h2>
+        <ul className='cart_list'>{cartList}</ul>
+        <div className='cart_total'>
+          <p>Discount: {discountState * 100}%</p>
+          <p>
+            Total: {total !== 0 ? `$ ${total}` : null}{' '}
+            <span className='cart_beforeDiscount'>
+              {orderValue !== 0 ? `$ ${orderValue}` : null}
+            </span>
+          </p>
+          <button onClick={handleCheckout} className='cart_checkout'>
+            Checkout
+          </button>
         </div>
-      ) : null}
-    </>
+      </div>
+    </div>
   );
 }
 
