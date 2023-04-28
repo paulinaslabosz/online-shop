@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { useRecoilValue } from 'recoil';
-import { products } from '../recoil_state';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { products, cart } from '../recoil_state';
 import '../styles/ProductPage.css';
 
 function ProductPage() {
@@ -9,6 +9,34 @@ function ProductPage() {
   const paramsId = Number(params.id);
   const productsList = useRecoilValue(products);
   const product = productsList.find((product) => product.id === paramsId);
+  const setCart = useSetRecoilState(cart);
+  const cartState = useRecoilValue(cart);
+
+  // add to cart feature
+
+  const addToCart = (id) => {
+    const productsForCart = productsList.map((product) => ({
+      id: product.id,
+      title: product.title,
+      quantity: 1,
+      price: product.price,
+      img: product.images[0],
+    }));
+
+    const product = productsForCart.find((product) => product.id === id);
+
+    if (cartState.find((item) => item.id === product.id)) {
+      const updatedCart = cartState.map((item) => {
+        if (item.id === product.id) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      });
+      setCart(() => updatedCart);
+    } else {
+      setCart((oldCart) => [...oldCart, product]);
+    }
+  };
 
   return (
     <>
@@ -33,7 +61,12 @@ function ProductPage() {
           <p className='productPage_price'>
             <strong>Price:</strong> {product?.price} $
           </p>
-          <button className='add_To_Cart'>Add to Cart</button>
+          <button
+            onClick={() => addToCart(product?.id)}
+            className='add_To_Cart'
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     </>
