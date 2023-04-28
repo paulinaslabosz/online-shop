@@ -44,12 +44,13 @@
 width: 30px;
 height: 30px;
 border: none;
-background-color: rgb(92, 91, 91);
+background-color: rgb(168, 166, 166);
 font-size: 22px;
 }
 
+
 .disabled {
-    background-color: rgb(168, 166, 166);
+    background-color: rgb(92, 91, 91);
 }
 
 .cart_quantityBtns {
