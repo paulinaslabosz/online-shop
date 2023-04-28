@@ -2,6 +2,7 @@ import React from 'react';
 import ProductCart from '../components/ProductCart';
 import { activeCart, cart, discount } from '../recoil_state';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
+import icon from '../images/icon-cart.png';
 import '../styles/Cart.css';
 
 function Cart() {
@@ -27,6 +28,10 @@ function Cart() {
     alert(`Checkout - Total: $ ${total}`);
   };
 
+  // amount of products
+
+  const amountOfProducts = cartState.length;
+
   const cartList = cartState.map((product) => (
     <ProductCart
       key={product.id + 'a'}
@@ -39,8 +44,15 @@ function Cart() {
   ));
   return (
     <div className={isActive ? 'cart_wrapper--active' : 'cart_wrapper'}>
-      <button className='cart_icon' onClick={onClick}>
-        {isActive ? 'X' : 'C'}
+      <button className='cart_shoppingCart' onClick={onClick}>
+        {isActive ? (
+          'X'
+        ) : (
+          <div className='cart_icon'>
+            <img className='cart_img' src={icon} alt='shoping cart icon' />
+            <span className='cart_amount'>{amountOfProducts}</span>
+          </div>
+        )}
       </button>
 
       <div className='cart'>
