@@ -35,7 +35,9 @@ function Product(props) {
   return (
     <div className='product'>
       <div className='img_wrapper'>
-        <img className='product_img' src={props.image} alt={props.name} />
+        <Link to={`/productsList/${props.id}`} className='product_title'>
+          <img className='product_img' src={props.image} alt={props.name} />
+        </Link>
       </div>
       <Link to={`/productsList/${props.id}`} className='product_title'>
         {props.title}
