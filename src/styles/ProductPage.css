@@ -18,7 +18,9 @@ margin-bottom: 40px;
 
 .slider-container {
  max-width: 650px;
+
 }
+
 
 .slide {
     display: flex;
@@ -27,6 +29,7 @@ margin-bottom: 40px;
 }
 .paging-item {
     width: 15px;
+    margin-top: 20px;
 }
 .paging-dot {
     width: 12px;

@@ -35,20 +35,40 @@ function Nav() {
   return (
     <nav className='nav'>
       <ul className='nav_list'>
-        <NavLink to='/productsList' className='nav_item'>
+        <NavLink
+          to='/productsList'
+          className={({ isActive }) =>
+            isActive ? 'nav_item activeNav' : 'nav_item'
+          }
+        >
           Products
         </NavLink>
         {/* {pathname === '/productsList' ? (
           <ul className='nav_category'>{categoriesList}</ul>
         ) : null} */}
-        <NavLink to='/blog' className='nav_item'>
+        <NavLink
+          to='/blog'
+          className={({ isActive }) =>
+            isActive ? 'nav_item activeNav' : 'nav_item'
+          }
+        >
           Blog
         </NavLink>
 
-        <NavLink to='/contact' className='nav_item'>
+        <NavLink
+          to='/contact'
+          className={({ isActive }) =>
+            isActive ? 'nav_item activeNav' : 'nav_item'
+          }
+        >
           Contact
         </NavLink>
-        <NavLink to='/adminPage' className='nav_item'>
+        <NavLink
+          to='/adminPage'
+          className={({ isActive }) =>
+            isActive ? 'nav_item activeNav' : 'nav_item'
+          }
+        >
           Admin Panel
         </NavLink>
       </ul>
