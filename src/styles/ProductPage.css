@@ -14,6 +14,8 @@ text-align: center;
 .productPage_wrapper {
 display: flex;
 margin-bottom: 40px;
+justify-content: center;
+align-items: center;
 }
 
 .slider-container {
@@ -27,10 +29,15 @@ margin-bottom: 40px;
     justify-content: center;
     align-items: center;
 }
+
 .paging-item {
     width: 15px;
-    margin-top: 20px;
 }
+
+.slider-control-bottomcenter > ul {
+    top: 20px !important;
+}
+
 .paging-dot {
     width: 12px;
     height: 12px;
