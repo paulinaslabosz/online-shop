@@ -16,9 +16,23 @@ display: flex;
 margin-bottom: 40px;
 }
 
-.productPage_img {
-    max-width: 600px;
+.slider-container {
+ max-width: 650px;
 }
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.paging-item {
+    width: 15px;
+}
+.paging-dot {
+    width: 12px;
+    height: 12px;
+}
+
 .productPage_content {
 padding: 20px 40px;
 display: flex;

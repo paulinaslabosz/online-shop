@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { products, cart } from '../recoil_state';
+import Carousel from 'nuka-carousel';
+
 import '../styles/ProductPage.css';
 
 function ProductPage() {
@@ -11,9 +13,9 @@ function ProductPage() {
   const product = productsList.find((product) => product.id === paramsId);
   const setCart = useSetRecoilState(cart);
   const cartState = useRecoilValue(cart);
+  const images = product.images;
 
   // add to cart feature
-
   const addToCart = (id) => {
     const productsForCart = productsList.map((product) => ({
       id: product.id,
@@ -38,6 +40,11 @@ function ProductPage() {
     }
   };
 
+  const paramsCarousel = {
+    wrapAround: true,
+    animation: 'zoom',
+  };
+
   return (
     <>
       <Link className='back_to_list' to='/productsList'>
@@ -45,7 +52,16 @@ function ProductPage() {
       </Link>
       <h3 className='productPage_title'>{product?.title}</h3>
       <div className='productPage_wrapper'>
-        <img src={product?.images[0]} alt='Product' />
+        <Carousel {...paramsCarousel} className='carousel'>
+          {images.map((image) => (
+            <img
+              className='productPage_img'
+              key={image}
+              src={image}
+              alt='Product'
+            />
+          ))}
+        </Carousel>
 
         <div className='productPage_content'>
           <h5 className='productPage_category'>
