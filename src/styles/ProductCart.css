@@ -37,6 +37,7 @@
     border: none;
     background-color: rgb(141, 140, 140);
     font-size: 25px;
+    cursor: pointer;
 
 }
 
@@ -46,6 +47,7 @@ height: 30px;
 border: none;
 background-color: rgb(168, 166, 166);
 font-size: 22px;
+cursor: pointer;
 }
 
 

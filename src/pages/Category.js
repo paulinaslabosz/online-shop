@@ -27,12 +27,12 @@ function Category() {
     />
   ));
   return (
-    <div>
+    <>
       <Link className='back_to_list' to='/productsList'>
         Back to list
       </Link>
       <div className='products'>{displayProducts}</div>;
-    </div>
+    </>
   );
 }
 
