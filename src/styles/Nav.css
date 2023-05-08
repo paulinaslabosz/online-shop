@@ -32,11 +32,17 @@
 }
 
 .nav_category {
+    /* display: none !important; */
+    height: 200px;
     list-style: none;
-    padding: 0 40px;
+    padding: 20px 40px;
     letter-spacing: 3px;
     text-transform: uppercase;
-}
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+   }
 
 .nav_category_item {
     font-weight: normal;
