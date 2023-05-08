@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSetRecoilState, useRecoilValue } from 'recoil';
 import ReactPaginate from 'react-paginate';
-import Article from '../components/Article';
-import { posts, users } from '../recoil_state';
-import '../styles/PaginateBlog.css';
+import Article from '../../components/Article';
+import { posts, users } from '../../recoil_state';
+import '../../styles/PaginateBlog.css';
 
 function PaginateBlog() {
   const postsAPI = 'https://jsonplaceholder.typicode.com/posts';

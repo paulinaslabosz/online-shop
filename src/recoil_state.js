@@ -15,20 +15,6 @@ const posts = atom({
   default: [],
 });
 
-const adminPermission = atom({
-  key: 'adminPermission',
-  default: false,
-});
-
-const userName = atom({
-  key: 'userName',
-  default: '',
-});
-const userPassword = atom({
-  key: 'userPassword',
-  default: '',
-});
-
 const categories = atom({
   key: 'categories',
   default: [],
@@ -49,15 +35,4 @@ const discount = atom({
   default: 0.25,
 });
 
-export {
-  discount,
-  activeCart,
-  cart,
-  categories,
-  products,
-  users,
-  posts,
-  adminPermission,
-  userName,
-  userPassword,
-};
+export { discount, activeCart, cart, categories, products, users, posts };

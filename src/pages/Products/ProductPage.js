@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { products, cart } from '../recoil_state';
+import { products, cart } from '../../recoil_state';
 import Carousel from 'nuka-carousel';
 
-import '../styles/ProductPage.css';
+import '../../styles/ProductPage.css';
 
 function ProductPage() {
   const params = useParams();

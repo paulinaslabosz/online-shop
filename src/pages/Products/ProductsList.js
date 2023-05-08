@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-
 import { useSetRecoilState, useRecoilValue } from 'recoil';
-import { products } from '../recoil_state';
-import Product from '../components/Product';
+import { products } from '../../recoil_state';
+import Product from '../../components/Product';
 import ReactPaginate from 'react-paginate';
-import '../styles/ProductsList.css';
+import '../../styles/ProductsList.css';
 
 function ProductsList() {
   //recoil

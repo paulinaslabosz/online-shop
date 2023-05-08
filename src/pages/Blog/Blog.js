@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Blog.css';
+import '../../styles/Blog.css';
 import PaginateBlog from './PaginateBlog';
 
 function Blog() {

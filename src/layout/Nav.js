@@ -63,14 +63,6 @@ function Nav() {
         >
           Contact
         </NavLink>
-        <NavLink
-          to='/adminPage'
-          className={({ isActive }) =>
-            isActive ? 'nav_item activeNav' : 'nav_item'
-          }
-        >
-          Admin Panel
-        </NavLink>
       </ul>
     </nav>
   );
