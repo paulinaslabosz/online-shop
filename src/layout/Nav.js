@@ -1,12 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { products, categories } from '../recoil_state';
 import '../styles/Nav.css';
 
 function Nav() {
+  //recoil
   const productsList = useRecoilValue(products);
   const categoriesState = useSetRecoilState(categories);
+
+  // state: hide/display categories
+  const [isVisible, setVisible] = useState(false);
+
+  //get API data for navigation (categories)
+  const setProducts = useSetRecoilState(products);
+  const productAPI = 'https://dummyjson.com/products?limit=100';
+  useEffect(() => {
+    fetch(productAPI)
+      .then((res) => res.json())
+      .then((data) => setProducts(() => data.products));
+  }, [setProducts]);
 
   // set unique categories' list
   const allCategories = productsList.map((product) => ({
@@ -24,6 +37,7 @@ function Nav() {
 
   categoriesState(uniqueCategories);
 
+  //single category link
   const categoriesList = uniqueCategories.map((category) => (
     <NavLink
       to={`/category/${category.id}`}
@@ -33,10 +47,6 @@ function Nav() {
       {category.category}
     </NavLink>
   ));
-
-  // function: hide/display categories
-
-  const [isVisible, setVisible] = useState(false);
 
   return (
     <nav className='nav'>

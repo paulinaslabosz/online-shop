@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import '../styles/Homepage.css';
 import img from '../images/SalePoster.png';
+
 function Homepage() {
   const [isLoaded, setLoaded] = useState(false);
+
   return (
     <div className='homepage_poster'>
       <img
