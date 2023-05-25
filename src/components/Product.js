@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { products, cart } from '../recoil_state';
+import { products, cart, activeCart } from '../recoil_state';
 import '../styles/Product.css';
+
 function Product(props) {
   const productsList = useRecoilValue(products);
   const setCart = useSetRecoilState(cart);
   const cartState = useRecoilValue(cart);
+  const setCartActive = useSetRecoilState(activeCart);
 
   const addToCart = (id) => {
     const productsForCart = productsList.map((product) => ({
@@ -30,6 +32,7 @@ function Product(props) {
     } else {
       setCart((oldCart) => [...oldCart, product]);
     }
+    setCartActive(true);
   };
 
   return (

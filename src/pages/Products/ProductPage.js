@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { products, cart } from '../../recoil_state';
+import { products, cart, activeCart } from '../../recoil_state';
 import Carousel from 'nuka-carousel';
 
 import '../../styles/ProductPage.css';
@@ -13,6 +13,7 @@ function ProductPage() {
   const product = productsList.find((product) => product.id === paramsId);
   const setCart = useSetRecoilState(cart);
   const cartState = useRecoilValue(cart);
+  const setCartActive = useSetRecoilState(activeCart);
   const images = product.images;
 
   // add to cart feature
@@ -38,6 +39,7 @@ function ProductPage() {
     } else {
       setCart((oldCart) => [...oldCart, product]);
     }
+    setCartActive(true);
   };
 
   const paramsCarousel = {
