@@ -2,7 +2,7 @@
 .cart_wrapper {
     display: flex;
     flex: row;
-    position: absolute;
+    position: fixed;
     right: -20vw;
     transition: right .5s;
 }
@@ -25,6 +25,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
+
 }
 
 .cart_icon {
