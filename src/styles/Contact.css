@@ -39,5 +39,5 @@ background-color: white;
 }
 
 .form_button:hover {
-    background-color: rgb(216, 217, 218);
+    border: 2px solid black;
 }
