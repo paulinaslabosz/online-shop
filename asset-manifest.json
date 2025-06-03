@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/online-shop/static/css/main.8b9efebe.css",
-    "main.js": "/online-shop/static/js/main.99b61dff.js",
+    "main.js": "/online-shop/static/js/main.e678d32a.js",
     "static/media/SalePoster.png": "/online-shop/static/media/SalePoster.48bc7e3aa3e4b3fca3bf.png",
     "index.html": "/online-shop/index.html",
     "main.8b9efebe.css.map": "/online-shop/static/css/main.8b9efebe.css.map",
-    "main.99b61dff.js.map": "/online-shop/static/js/main.99b61dff.js.map"
+    "main.e678d32a.js.map": "/online-shop/static/js/main.e678d32a.js.map"
   },
   "entrypoints": [
     "static/css/main.8b9efebe.css",
-    "static/js/main.99b61dff.js"
+    "static/js/main.e678d32a.js"
   ]
 }
