@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import ProductCart from '../components/ProductCart';
 import { activeCart, cart, discount } from '../recoil_state';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
@@ -10,6 +10,9 @@ function Cart() {
   const cartState = useRecoilValue(cart);
   const discountState = useRecoilValue(discount);
   const setActiveCart = useSetRecoilState(activeCart);
+
+  const ref = useRef(null);
+  const buttonRef = useRef(null);
 
   const onClick = () => {
     setActiveCart((oldIsActive) => !oldIsActive);
@@ -42,6 +45,21 @@ function Cart() {
       quantity={product.quantity}
     />
   ));
+
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (
+        !ref.current?.contains(e.target) &&
+        !buttonRef.current?.contains(e.target)
+      ) {
+        setActiveCart(false);
+      }
+    };
+    window.addEventListener('mousedown', handleOutsideClick);
+    return () => {
+      window.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [ref, buttonRef]);
   return (
     <div className={isActive ? 'cart_wrapper--active' : 'cart_wrapper'}>
       <button className='cart_shoppingCart' onClick={onClick}>
