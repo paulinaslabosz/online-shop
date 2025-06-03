@@ -24,11 +24,14 @@ function Cart() {
     (product) => product.price * product.quantity
   );
 
-  const orderValue = CartProductsValue.reduce((a, b) => a + b, 0);
+  const orderBeforeDiscount = CartProductsValue.reduce((a, b) => a + b, 0);
+  const valueBeforeDiscount = orderBeforeDiscount.toFixed(2);
 
-  const total = orderValue - orderValue * discountState;
+  const valueAfterDiscount =
+    valueBeforeDiscount - valueBeforeDiscount * discountState;
+  const totalAfterDiscount = valueAfterDiscount.toFixed(2);
   const handleCheckout = () => {
-    alert(`Checkout - Total: $ ${total}`);
+    alert(`Checkout - Total: $ ${totalAfterDiscount}`);
   };
 
   // amount of products
@@ -95,9 +98,9 @@ function Cart() {
         <div className='cart_total'>
           <p>Discount: {discountState * 100}%</p>
           <p>
-            Total: {total !== 0 ? `$ ${total}` : null}{' '}
+            Total: {totalAfterDiscount !== 0 ? `$ ${totalAfterDiscount}` : null}{' '}
             <span className='cart_beforeDiscount'>
-              {orderValue !== 0 ? `$ ${orderValue}` : null}
+              {valueBeforeDiscount !== 0 ? `$ ${valueBeforeDiscount}` : null}
             </span>
           </p>
           <button onClick={handleCheckout} className='cart_checkout'>
